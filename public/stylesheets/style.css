@@ -1,8 +1,36 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > nav {
+  display: flex;
+  background-color: green;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding: 10px 20px 10px 30px;
+}
+
+nav > a {
+  margin: 30px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: lightgreen;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
 }
