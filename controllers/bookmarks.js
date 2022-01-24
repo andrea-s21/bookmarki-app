@@ -3,20 +3,37 @@ const Bookmark = require('../models/bookmark');
 module.exports = {
     index,
     new: newBookmark,
-    create
-    //show
+    create,
+    show, 
+    edit, 
+    update
 }
 
-// function show(req, res) {
-//     Bookmark.findById(req.params.id, function (err, bookmark) {
-//       console.log(bookmark)
-//       Resource.find({ bookmark: bookmark._id }, function (err, resources) {
-//         console.log(resources);
-//         res.render('index/show', { title: 'Bookmark Detail', bookmarks, resources });
-//       }
-//       );
-//     });
-//   }
+function update(req, res) {
+  Skill.updateOne(req.params.id, req.body);
+  res.redirect(`/bookmarks/${req.params.id}`);
+}
+
+function edit(req, res) {
+  const bookmark = Bookmark.findOne(req.params.id);
+  res.render('bookmarks/show', {bookmark});
+}
+
+
+function show(req, res) {
+    Bookmark.findById(req.params.id, function (err, bookmark) {
+      // const bookmark = new Bookmark({ title: String }, { description: String }, { url: String }, { category: String, enum: ['News', 'Financial', 'School', 'Other'] } );
+      // bookmark.save(function (err) {
+        res.render(`bookmarks/show`, { title: 'Edit Bookamrk', bookmark});
+    });
+      // const bookmarkId = new Bookmark(req.body);
+      // bookmark.save(function (err) {
+      //   if (err) return res.redirect('/bookmarks/show');
+      //   console.log(bookmark);
+      //   res.redirect(`/bookmarks`);
+      // });
+    //});
+  }
 
 function create(req, res) {
     bookmarkId = req.params.id;
@@ -37,5 +54,6 @@ function index(req, res) {
       })
       .catch(function (err) {
         res.redirect('/bookmarks');
-      });
+      })
+      //const bookmarks = await Bookmark.find().sort('-CategoryWeight');
   }

@@ -5,8 +5,10 @@ var isLoggedIn = require('../config/auth');
 
 router.get('/', bookmarksCtrl.index);
 router.get('/new', bookmarksCtrl.new);
-//router.get('/:id', bookmarksCtrl.show);
+router.get('/:id', bookmarksCtrl.show);
 router.post('/', bookmarksCtrl.create);
+router.get('/:id/edit', bookmarksCtrl.edit);
+router.put('/:id', bookmarksCtrl.update);
 
 
 

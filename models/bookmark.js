@@ -17,6 +17,9 @@ const bookmarkSchema = new Schema({
         type: String,
         enum: ['News', 'Financial', 'School', 'Other']
     },
+    CategoryWeight: { 
+        type: Number 
+    },
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
     userAvatar: String
