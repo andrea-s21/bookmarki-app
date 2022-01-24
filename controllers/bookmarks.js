@@ -4,19 +4,30 @@ module.exports = {
     index,
     new: newBookmark,
     create,
-    show, 
-    edit, 
-    update
+    show,
+    edit,
+    update,
+    delete: deleteBookmark
+}
+
+function deleteBookmark(req, res) {
+  Bookmark.findById(req.params.id).populate('bookmark').exec(function (err, bookmark) {
+    Bookmark.findByIdAndDelete(req.params.id, function (err) {
+        console.log(`deleting: ${bookmark}`);
+        res.redirect('/bookmarks');
+    });
+});
 }
 
 function update(req, res) {
-  Skill.updateOne(req.params.id, req.body);
-  res.redirect(`/bookmarks/${req.params.id}`);
+  Bookmark.updateOne(req.params.id, req.body);
+  res.render('bookmarks/show', {title: 'Edit Bookamrk', bookmark});
+  res.redirect('/bookmarks');
 }
 
 function edit(req, res) {
   const bookmark = Bookmark.findOne(req.params.id);
-  res.render('bookmarks/show', {bookmark});
+  res.render('bookmarks/show', {title: 'Edit Bookamrk', bookmark});
 }
 
 
@@ -39,7 +50,7 @@ function create(req, res) {
     bookmarkId = req.params.id;
     req.body.bookmark = bookmarkId;
     Bookmark.create(req.body, function (err, bookmark) {
-        res.redirect(`/bookmarks`);
+        res.redirect('/bookmarks');
     });
 }
 

@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<h3>Edit Bookmark</h3>
+<h3>Bookmark Details</h3>
 <section id="show-page">
-  <h4>Title: </h4>
+    <h4>Title: </h4>
   <div>
     <%= bookmark.title %>
   </div>
@@ -14,11 +14,34 @@
   <div>
     <%= bookmark.url %>
   </div>
-  <h4>Departs: </h4>
+  <h4>Category: </h4>
   <div>
     <%= bookmark.category %>
   </div>
 </section>
-<a href="/bookmarks/edit<%= bookmark._id  %> ">Edit Bookmark</a>
+<h3>Edit Bookmark</h3>
+<form action="/bookmarks/<% bookmark.id %>?_method=PUT" method="POST">
+    <label>Title:
+        <input type="text" name="title">
+    </label><br>
+    <label>Description:
+        <input type="text" name="description">
+    </label><br>
+    <label>URL:
+        <!-- link should be clickable -->
+      <input type="link" name="url">
+    </label><br>
+    <label>Category:
+        <select name="category" id="">
+            <option value="News">News</option>
+            <option value="Financial">Financial</option>
+            <option value="School">School</option>
+            <option value="Other">Other</option>
+        </select>
+    </label><br>
+    <tbody>
+    <input type="submit" value="Save">
+  </form>
+
 
   <%- include('../partials/footer') %>

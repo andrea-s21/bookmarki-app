@@ -9,6 +9,7 @@ router.get('/:id', bookmarksCtrl.show);
 router.post('/', bookmarksCtrl.create);
 router.get('/:id/edit', bookmarksCtrl.edit);
 router.put('/:id', bookmarksCtrl.update);
+router.delete('/bookmarks/:id', bookmarksCtrl.delete);
 
 
 
