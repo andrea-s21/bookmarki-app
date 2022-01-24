@@ -6,8 +6,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- add user id to fetch name -->
+    <% if (user) { %> 
+      <h3>Welcome! What would you like to do today?</h3> 
+      <a href="/bookmarks/new">Add a new bookmark</a>&nbsp;
+      <a href="/bookmarks">Explore your bookmarks</a>&nbsp;
+      <% } else { %> 
+      <p>A fun way to organize your bookmarks.</p>
+      <% } %>
   </body>
 </html>
 

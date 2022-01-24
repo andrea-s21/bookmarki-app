@@ -1,21 +1,38 @@
 <%- include('../partials/header') %>
 
-<h1>My bookmark shelf</h1>
-<section>
-    <div>Category 1</div>
-    <div>Category 2</div>
-    <div>Category 3</div>
-    <div>Category 4</div>
-    <div>Category 5</div>
-    <div>Category 6</div>
-</section>
-<% bookmarks.forEach(function(b) { %>
-    <tr>
-      <td><%= m.title %></td>
-      <td><%= m.releaseYear %></td>
-      <td><a href="/movies/<%= m._id %>">DETAILS</a></td>
-    </tr>
-    <% }); %>
+<h2> My Bookmarks</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title &nbsp;&nbsp;&nbsp;</th>
+            <th>Description &nbsp;&nbsp;&nbsp;</th>
+            <th>URL&nbsp;&nbsp;&nbsp;</th>
+            <th>Category&nbsp;&nbsp;&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% bookmarks.forEach(function(b) { %>
+            <tr>
+                <td>
+                    <%= b.title %>
+                </td>
+                <td>
+                    <%= b.description %>
+                </td>
+                <td>
+                    <%= b.url %>
+                </td>
+                <td>
+                    <%= b.category %>
+                </td>
+                <td>
+                    <a href="/bookmarks/<%= b._id  %> ">Edit Bookmark</a>
+                </td>
+            </tr>
+            <!-- Close the forEach using EJS here -->
+            <% }); %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>
 

@@ -1,10 +1,10 @@
 const Bookmark = require('../models/bookmark');
 
 module.exports = {
-    index
-    // new: newBookmark,
-    // create,
-    // show
+    index,
+    new: newBookmark,
+    create
+    //show
 }
 
 // function show(req, res) {
@@ -18,24 +18,24 @@ module.exports = {
 //     });
 //   }
 
-// function create(req, res) {
-//     bookmarkId = req.params.id;
-//     req.body.bookmark = bookmarkId;
-//     Bookmark.create(req.body, function (err, bookmark) {
-//         res.redirect(`/index`);
-//     });
-// }
+function create(req, res) {
+    bookmarkId = req.params.id;
+    req.body.bookmark = bookmarkId;
+    Bookmark.create(req.body, function (err, bookmark) {
+        res.redirect(`/bookmarks`);
+    });
+}
 
-// function newBookmark(req, res) {
-//     res.render('/new');
-// }
+function newBookmark(req, res) {
+    res.render('bookmarks/new');
+}
 
 function index(req, res) {
     Bookmark.find({})
-        .then(function(bookmarks) {
-            res.render('/index', {title: 'My bookmark shelf', bookmarks});
-        })
-        .catch(function(err) {
-            res.redirect('/index');
-        });
-}
+      .then(function (bookmarks) {
+        res.render('bookmarks/index', { title: 'My Bookmarks', bookmarks });
+      })
+      .catch(function (err) {
+        res.redirect('/bookmarks');
+      });
+  }
