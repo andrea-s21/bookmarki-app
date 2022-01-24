@@ -4,7 +4,8 @@
 
 body {
   margin: 0;
-  padding: 20px;
+  background-color: #eddfc1;
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,10 +13,10 @@ body {
 
 body > nav {
   display: flex;
-  background-color: green;
+  background-color: #ffca60;
   flex-flow: row wrap;
   justify-content: flex-end;
-  padding: 10px 20px 10px 30px;
+  padding: 0px 20px 10px 30px;
 }
 
 nav > a {
@@ -27,10 +28,37 @@ nav > a {
 
 nav > a:hover:not(.active) {
   color: white;
-  background-color: lightgreen;
+  background-color: darkgrey;
 }
 
 nav > a.active {
   color: white;
   cursor: default;
 }
+
+#home-page {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  justify-items: end;
+  column-gap: 75px;
+}
+
+p {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  color: #4f4d4a;
+  font-weight: 800;
+  box-sizing: content-box;
+  position: inherit;
+  width: 550px;
+}
+
+#home-img {
+  box-sizing: content-box;
+  justify-items: right;
+  position: inherit;
+  width: 650px;
+}
+
+
