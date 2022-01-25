@@ -20,14 +20,13 @@ function deleteBookmark(req, res) {
 }
 
 function update(req, res) {
-  Bookmark.updateOne(req.params.id, req.body);
-  res.render('bookmarks/show', {title: 'Edit Bookamrk', bookmark});
+  const bookmark = Bookmark.findOneAndUpdate(req.params.id, req.body);
   res.redirect('/bookmarks');
 }
 
-function edit(req, res) {
+  function edit(req, res) {
   const bookmark = Bookmark.findOne(req.params.id);
-  res.render('bookmarks/show', {title: 'Edit Bookamrk', bookmark});
+    res.render('bookmarks/show', {title: 'Edit Bookamrk', bookmark});
 }
 
 
