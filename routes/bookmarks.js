@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var bookmarksCtrl = require('../controllers/bookmarks');
 var isLoggedIn = require('../config/auth');
+var bookmarksCtrl = require('../controllers/bookmarks');
 
 router.get('/', bookmarksCtrl.index);
 router.get('/new', bookmarksCtrl.new);

@@ -19,8 +19,8 @@
     <%= bookmark.category %>
   </div>
 </section>
-<h3>Edit Bookmark</h3>
-<form action="/bookmarks/<% bookmark.id %>/show?_method=PUT" method="POST">
+<h3>Edit Bookmark</h3> 
+<form action="/bookmarks/<% bookmark._id %>/show?_method=PUT" method="POST">
     <label>Title:
         <input type="text" name="title">
     </label><br>
@@ -39,9 +39,6 @@
             <option value="Other">Other</option>
         </select>
     </label><br>
-    <tbody>
-    <input type="submit" value="Save">
+    <button type="submit">Save</button>
   </form>
-
-
   <%- include('../partials/footer') %>
