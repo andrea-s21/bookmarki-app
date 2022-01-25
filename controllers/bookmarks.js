@@ -1,4 +1,5 @@
 const Bookmark = require('../models/bookmark');
+const user = require('../models/user');
 const User = require('../models/user');
 
 module.exports = {
@@ -12,14 +13,16 @@ module.exports = {
 }
 
 function deleteBookmark(req, res) {
-    Bookmark.findOneAndDelete(req.body, function (err) {
-      res.redirect('/bookmarks');
+  Bookmark.findById(req.params.id).populate('bookmark').exec(function (err, bookmark) {
+    Bookmark.findByIdAndDelete(req.params.id, function (err) {
+        console.log(`deleting: ${bookmark}`);
+        res.redirect('/bookmarks');
     });
+});
 }
 
 function update(req, res) {
-  //req.body.user = req.user._id;
-  Bookmark.findOneAndUpdate(req.body,
+  Bookmark.findOneAndUpdate(req.params.id,
     req.body,
     { new: true },
     function (err, bookmark) {
@@ -29,8 +32,7 @@ function update(req, res) {
 }
 
 function edit(req, res) {
-  //req.body.user = req.user._id;
-  Bookmark.findOne(req.body, function(err, bookmark) {
+  Bookmark.findOne(req.params.id, function(err, bookmark) {
     if (err || !bookmark) return res.redirect('/bookmarks');
     res.render(`bookmarks/show/${bookmark._id}`);
   });
@@ -55,13 +57,14 @@ function newBookmark(req, res) {
 }
 
 function index(req, res) {
-  Bookmark.find({})
-  .then(function (bookmarks) {
+  Bookmark.find({}).populate('user').exec(function(err, bookmarks){
     res.render('bookmarks/index', {bookmarks});
   })
-    // User.findById(req.user._id)
-    // .then(function (user) {
-    //   res.render('bookmarks/index', {user});
-    // })
+
+
+  //   User.findById(req.user._id)
+  //   .then(function (user) {
+  //     res.render('bookmarks/index', {user});
+  //   })
   //const bookmarks = await Bookmark.find().sort('-CategoryWeight');
 }

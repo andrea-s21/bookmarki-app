@@ -11,7 +11,10 @@
         </tr>
     </thead>
     <tbody>
+        <% if (user){ %> 
         <% bookmarks.forEach(function(b) { %>
+            <% if (user._id.toString() === b.user._id.toString()) { %>
+          
             <tr>
                 <td>
                     <%= b.title %>
@@ -33,7 +36,9 @@
                 <input type="submit" name="" value="Delete Bookmark">
             </form>
             <!-- Close the forEach using EJS here -->
+            <% } %> 
             <% }); %>
+            <% } %> 
     </tbody>
 </table>
 
