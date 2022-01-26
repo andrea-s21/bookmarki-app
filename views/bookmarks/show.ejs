@@ -18,28 +18,8 @@
   <div>
     <%= bookmark.category %>
   </div>
+  <a href="/bookmarks/<%= bookmark._id %>/edit">Edit Bookmark</a>
 </section>
-<h3>Edit Bookmark</h3> 
-<%= console.log(bookmark._id.toString())  %> 
-<form action="/bookmarks/<%= bookmark._id %>?_method=PUT" method="POST">
-    <label>Title:
-        <input type="text" name="title" value="<%= bookmark.title  %>" >
-    </label><br>
-    <label>Description:
-        <input type="text" name="description" value="<%= bookmark.description  %>">
-    </label><br>
-    <label>URL:
-        <!-- link should be clickable -->
-      <input type="link" name="url" value="<%= bookmark.url  %>">
-    </label><br>
-    <label>Category:
-        <select name="category">
-            <option <%= bookmark.category === 'News' ? 'selected' : '' %>  value="News">News</option>
-            <option <%= bookmark.category === 'Financial' ? 'selected' : '' %>  value="Financial">Financial</option>
-            <option <%= bookmark.category === 'School' ? 'selected' : '' %>  value="School">School</option>
-            <option <%= bookmark.category === 'Other' ? 'selected' : '' %>  value="Other">Other</option>
-        </select>
-    </label><br>
-    <button type="submit">Save</button>
-  </form>
-  <%- include('../partials/footer') %>
+   
+
+<%- include('../partials/footer') %>

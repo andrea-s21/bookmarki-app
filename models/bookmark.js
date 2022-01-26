@@ -17,14 +17,13 @@ const bookmarkSchema = new Schema({
         type: String,
         enum: ['Financial','News', 'Other', 'School']
     },
-    CategoryWeight: { 
-        type: Number 
-    },
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
     userAvatar: String
-  }, {
+}, {
     timestamps: true
 });
 
 module.exports = mongoose.model('Bookmark', bookmarkSchema);
+
+
