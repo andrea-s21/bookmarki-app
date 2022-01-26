@@ -10,18 +10,17 @@
     </label><br>
     <label>URL:
         <!-- link should be clickable -->
-      <input type="link" name="url">
+      <input type="url" name="url">
     </label><br>
     <label>Category:
-        <select name="category" id="">
-            <option value="News">News</option>
-            <option value="Financial">Financial</option>
-            <option value="School">School</option>
-            <option value="Other">Other</option>
+        <select name="category">
+          <% categories.forEach(function(c){ %>
+            <option value="%= c.title %>"><%= c.title %> </option>
+          <% }) %> 
         </select>
       </label><br>
-      <label>Add Category:
-        <input type="text" value="Add New Category">
+      <label>If category is not listed please add one:
+        <input type="text" name="newcategory">
       </label>
     <input type="submit" value="Add Bookmark">
   </form>

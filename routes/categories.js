@@ -5,7 +5,7 @@ var categoriesCtrl = require('../controllers/bookmarks');
 
 router.use(isLoggedIn);
 
-router.get('/', categoriesCtrl.index);
-router.post('/', categoriesCtrl.create);
+//router.get('/', categoriesCtrl.index);
+router.post('/:category/bookmarks/:id', categoriesCtrl.create);
 
 module.exports = router;

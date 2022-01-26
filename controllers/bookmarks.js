@@ -1,11 +1,11 @@
 const Bookmark = require('../models/bookmark');
-const user = require('../models/user');
-const User = require('../models/user');
+const Category = require('../models/category');
 
 module.exports = {
   index,
   new: newBookmark,
   create,
+  add: addCategory,
   show,
   update,
   edit,
@@ -41,23 +41,41 @@ function show(req, res) {
   });
 }
 
-function create(req, res) {
+function addCategory(req, res) {
+    Category.findById(req.params.id, function(err, category) {
+      Bookmarks.findById(req.params.id, function(err, bookmark) {
+        bookmark.categories.push(category);
+        bookmark.save(function(err) {
+          res.redirect('/bookmarks');
+        })
+      })
+  })
+}
+
+async function create(req, res) {
   req.body.user = req.user._id;
+  if (req.body.newcategory) {
+    await Category.create({ title: req.body.newcategory });
+    req.body.category = req.body.newcategory
+  }
   Bookmark.create(req.body, function (err, bookmark) {
     res.redirect('/bookmarks');
   });
 }
 
 function newBookmark(req, res) {
-  res.render('bookmarks/new');
+  Category.find({}).sort('title').exec(function(err, categories) {
+    res.render('bookmarks/new', {categories});
+  });
 }
 
 function index(req, res) {
-  const categories = Bookmark.schema.path('category').enumValues;
-  Bookmark.find({})
-  .populate('user')
-  .sort('category')
-  .exec(function(err, bookmarks){
-    res.render('bookmarks/index', {bookmarks, categories});
+  Category.find({}).sort('title').exec(function(err, categories) {
+    Bookmark.find({})
+    .populate('user')
+    .sort('category')
+    .exec(function(err, bookmarks){
+      res.render('bookmarks/index', {bookmarks, categories});
+    })
   })
 }

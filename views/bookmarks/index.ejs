@@ -3,8 +3,8 @@
 <h2> My Bookmarks</h2>
         <% categories.forEach(function(c) { %>
             <section>
-            <h3><%= c %> </h3>
-                <% var filteredBookmarks = bookmarks.filter(b => b.category === c) %> 
+            <h3><%= c.title %> </h3>
+                <% var filteredBookmarks = bookmarks.filter(b => b.category === c.title) %> 
                      <% if (filteredBookmarks.length) { %> 
                         <% filteredBookmarks.forEach(function(b) { %>
                             <%= console.log("user", user._id)  %> 
