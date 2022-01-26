@@ -1,24 +1,28 @@
 <%- include('../partials/header') %>
 
 <h2> My Bookmarks</h2>
-<% categories.forEach(function(c) { %>
-    <section>
-        <h3><%= c %> </h3>
-        <% var filteredBookmarks = bookmarks.filter(b => b.category === c) %> 
-        <% if (filteredBookmarks.length) { %> 
-            <% filteredBookmarks.forEach(function(b) { %>
-                <article>
-                    <div><%= b.title %> </div>
-                    <div><%= b.description %> </div>
-                    <div><%= b.url %> </div>
-                    <div><%= b.category %> </div>
-                </article>
-                <a href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
-            <% }) %> 
+        <% categories.forEach(function(c) { %>
+            <section>
+            <h3><%= c %> </h3>
+                <% var filteredBookmarks = bookmarks.filter(b => b.category === c) %> 
+                     <% if (filteredBookmarks.length) { %> 
+                        <% filteredBookmarks.forEach(function(b) { %>
+                            <%= console.log("user", user._id)  %> 
+                            <%= console.log("bookmark", b.user._id)  %> 
+                            <% if (user._id.toString()===b.user._id.toString()) { %>
+                            <article>
+                                <div><%= b.title %> </div>
+                                <div><%= b.description %> </div>
+                                <div><%= b.url %> </div>
+                                <div><%= b.category %> </div>
+                            </article>
+                            <a href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
+                            <% } %> 
+        <% }) %> 
         <% } else { %> 
             <div>No bookmarks for this category.</div>
         <% } %> 
-    </section>
-<% }) %> 
+            </section>
+<% }) %>
 
 <%- include('../partials/footer') %>

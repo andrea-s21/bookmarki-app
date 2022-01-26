@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const categorySchema = new Schema({
+    title: {
+        type: String,
+        required: true  
+    },
+
+}, {
+    timestamps: true
+});
+
+
 const bookmarkSchema = new Schema({
     title: {
         type: String,
@@ -14,8 +25,8 @@ const bookmarkSchema = new Schema({
         required: true
     },
     category: {
-        type: String,
-        enum: ['Financial','News', 'Other', 'School']
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
     },
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
