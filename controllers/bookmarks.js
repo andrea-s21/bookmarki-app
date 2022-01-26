@@ -13,11 +13,9 @@ module.exports = {
 }
 
 function deleteBookmark(req, res) {
-  Bookmark.findById(req.params.id).populate('bookmark').exec(function (err, bookmark) {
-    Bookmark.findByIdAndDelete(req.params.id, function (err) {
-        res.redirect('/bookmarks');
-    });
-});
+  Bookmark.findByIdAndDelete(req.params.id, function (err) {
+      res.redirect('/bookmarks');
+  });
 }
 
 function update(req, res) {
