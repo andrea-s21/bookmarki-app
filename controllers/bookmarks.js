@@ -7,7 +7,6 @@ module.exports = {
   new: newBookmark,
   create,
   show,
-  edit,
   update,
   delete: deleteBookmark
 }
@@ -22,21 +21,16 @@ function deleteBookmark(req, res) {
 }
 
 function update(req, res) {
+  console.log('HELLO!!!')
   Bookmark.findOneAndUpdate(req.params.id,
     req.body,
     { new: true },
     function (err, bookmark) {
-      if (err || !bookmark) return res.redirect('/bookmarks');
+      res.redirect(`/bookmarks/${bookmark._id}`);
     }
   );
 }
 
-function edit(req, res) {
-  Bookmark.findOne(req.params.id, function(err, bookmark) {
-    if (err || !bookmark) return res.redirect('/bookmarks');
-    res.render(`bookmarks/show/${bookmark._id}`);
-  });
-}
 
 
 function show(req, res) {
@@ -57,14 +51,14 @@ function newBookmark(req, res) {
 }
 
 function index(req, res) {
-  Bookmark.find({}).populate('user').exec(function(err, bookmarks){
-    res.render('bookmarks/index', {bookmarks});
+  const categories = Bookmark.schema.path('category').enumValues;
+  Bookmark.find({})
+  .populate('user')
+  .sort('category')
+  .exec(function(err, bookmarks){
+    res.render('bookmarks/index', {bookmarks, categories});
   })
 
 
-  //   User.findById(req.user._id)
-  //   .then(function (user) {
-  //     res.render('bookmarks/index', {user});
-  //   })
   //const bookmarks = await Bookmark.find().sort('-CategoryWeight');
 }

@@ -15,7 +15,7 @@ const bookmarkSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['News', 'Financial', 'School', 'Other']
+        enum: ['Financial','News', 'Other', 'School']
     },
     CategoryWeight: { 
         type: Number 
