@@ -8,14 +8,19 @@
   <body>
     <!-- add user id to fetch name -->
     <% if (user) { %> 
-      <h3>Welcome! What would you like to do today?</h3> 
-      <a href="/bookmarks/new">Add a new bookmark</a>&nbsp;
-      <a href="/bookmarks">Explore your bookmarks</a>&nbsp;
+      <!-- <img class="bkgd-img" src="https://i.imgur.com/BXU9L1y.png" alt=""> -->
+      <section id="home-page">
+        <h3 id="home-header">Welcome! What would you like to do today?</h3> 
+        <a id="new-btn" href="/bookmarks/new">Add a new bookmark</a>&nbsp;
+        <a id="explore-btn" href="/bookmarks">Explore your bookmarks</a>&nbsp;
+      </section>
       <% } else { %> 
-        <section id="home-page">
-      <p>A fun way to organize your bookmarks.<p>
+      <section id="welcome-page">
+        <!-- <img class="bkgd-img" src="https://i.imgur.com/SFi34mx.png" alt=""> -->
+        <h1 id="welcome-header">A fun way to organize your bookmarks.<h1>
+          <p id="welcome-msg">Keep all your bookmarks organized by creating your own unique categories.<p>
+              <a id="auth-btn" href="/auth/google">Start organizing</a>
         <% } %>
-        <img id="home-img"src="/images/pexels-alex-andrews-3045245_ccexpress.jpeg" alt="">
       </section>
   </body>
 </html>
