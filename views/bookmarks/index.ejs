@@ -1,28 +1,44 @@
 <%- include('../partials/header') %>
 
-<h2> My Bookmarks</h2>
-        <% categories.forEach(function(c) { %>
-            <section>
-            <h3><%= c.title %> </h3>
-                <% var filteredBookmarks = bookmarks.filter(b => b.category === c.title) %> 
-                     <% if (filteredBookmarks.length) { %> 
-                        <% filteredBookmarks.forEach(function(b) { %>
-                            <%= console.log("user", user._id)  %> 
-                            <%= console.log("bookmark", b.user._id)  %> 
-                            <% if (user._id.toString()===b.user._id.toString()) { %>
-                            <article>
-                                <div><%= b.title %> </div>
-                                <div><%= b.description %> </div>
-                                <div><%= b.url %> </div>
-                                <div><%= b.category %> </div>
+    <h2> My Bookmarks</h2>
+    <% categories.forEach(function(c) { %>
+        <section>
+            <h3>
+                <%= c.title %>
+            </h3>
+            <% var filteredBookmarks=bookmarks.filter(b=> b.category === c.title) %>
+                <% if (filteredBookmarks.length) { %>
+                    <% filteredBookmarks.forEach(function(b) { %>
+                        <% if (user._id.toString()===b.user._id.toString()) { %>
+                            <article id="index">
+                                <label><span>Title:</span>
+                                    <div>
+                                        <%= b.title %>
+                                    </div>
+                                </label>
+                                <label><span>Description:</span>
+                                    <div>
+                                        <%= b.description %>
+                                    </div>
+                                </label>
+                                <label><span>URL:</span>
+                                    <div>
+                                        <%= b.url %>
+                                    </div>
+                                </label>
+                                <label><span>Category</span>
+                                    <div>
+                                        <%= b.category %>
+                                    </div>
+                                </label>
+                                <a id="view-btn" href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
                             </article>
-                            <a href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
-                            <% } %> 
-        <% }) %> 
-        <% } else { %> 
-            <div>No bookmarks for this category.</div>
-        <% } %> 
-            </section>
-<% }) %>
+                        <% } %>
+                    <% }) %>
+                <% } else { %>
+                <div id="no-bkmrks">No bookmarks for this category.</div>
+            <% } %>
+        </section>
+     <% }) %>
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

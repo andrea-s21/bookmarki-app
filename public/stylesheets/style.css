@@ -163,19 +163,27 @@ body > main {
   width: 25rem;
   margin-left: auto;
   font-size: 15px;
+  color: #5A5A5A;
 }
 
 #add-form > label > textarea {
   width: 25rem;
+  font-family: 'Poppins', sans-serif;
+  color: #5A5A5A;
+  font-size: 15px;
 }
 
 #edit-form > label > textarea {
   width: 25rem;
+  font-family: 'Poppins', sans-serif;
+  color: #5A5A5A;
+  font-size: 15px;
 }
 
 #add-form > label > select {
   width: 10rem;
   font-family: 'Poppins', sans-serif;
+  color: #5A5A5A;
 }
 
 #edit-form input[type="url"], input[type="text"]  {
@@ -247,12 +255,60 @@ body > main {
 }
 
 h2 {
-  padding-bottom: 10px;
+  padding-top: 10px;
   font-size: 30px;
   color: #51859a;
   text-shadow: 1px 1px floralwhite;
   font-weight: 600;
   text-align: center;
+}
+
+#index, h3 {
+  padding-left: 100px;
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, minmax(auto, 25rem));
+  font-size: 15px;
+}
+
+h3 {
+  font-size: 25px;
+  color: #5A5A5A;
+  text-shadow: 1px 1px floralwhite;
+  font-weight: 600;
+}
+
+span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5A5A5A;
+}
+
+#view-btn {
+  padding:0.35em 1.2em;
+  border:0.1em solid #51859a;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  color: floralwhite;
+  text-align:center;
+  transition: all 0.2s;
+  background-color: #51859a;
+  width: 15em;
+}
+
+#view-btn:hover{
+  color: #51859a;
+  background-color: floralwhite;
+}
+
+#no-bkmrks {
+  text-align: center;
+  color: #5A5A5A;
 }
 
 #login-img {
