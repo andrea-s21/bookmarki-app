@@ -5,7 +5,6 @@ module.exports = {
   index,
   new: newBookmark,
   create,
-  add: addCategory,
   show,
   update,
   edit,
@@ -41,17 +40,6 @@ function show(req, res) {
   });
 }
 
-function addCategory(req, res) {
-    Category.findById(req.params.id, function(err, category) {
-      Bookmarks.findById(req.params.id, function(err, bookmark) {
-        bookmark.categories.push(category);
-        bookmark.save(function(err) {
-          res.redirect('/bookmarks');
-        })
-      })
-  })
-}
-
 async function create(req, res) {
   req.body.user = req.user._id;
   if (req.body.newcategory) {
@@ -59,6 +47,7 @@ async function create(req, res) {
     req.body.category = req.body.newcategory
   }
   Bookmark.create(req.body, function (err, bookmark) {
+    console.log('HELLO!')
     res.redirect('/bookmarks');
   });
 }

@@ -1,29 +1,29 @@
 <%- include('../partials/header') %>
 
-  <h2>Add a new bookmark</h2>
-  <form action="/bookmarks" method="POST">
-    <label>Title:
-        <input type="text" name="title">
+<h2>Add a new bookmark</h2>
+<form action="/bookmarks" method="POST">
+  <label>Title:
+      <input type="text" name="title">
+  </label><br>
+  <label>Description:
+      <input type="text" name="description">
+  </label><br>
+  <label>URL:
+      <!-- link should be clickable -->
+    <input type="url" name="url">
+  </label><br>
+  <label>Category:
+      <select name="category">
+        <% categories.forEach(function(c){ %>
+          <option value="<%= c.title %>"><%= c.title %> </option>
+        <% }) %> 
+      </select>
     </label><br>
-    <label>Description:
-        <input type="text" name="description">
-    </label><br>
-    <label>URL:
-        <!-- link should be clickable -->
-      <input type="url" name="url">
-    </label><br>
-    <label>Category:
-        <select name="category">
-          <% categories.forEach(function(c){ %>
-            <option value="%= c.title %>"><%= c.title %> </option>
-          <% }) %> 
-        </select>
-      </label><br>
-      <label>If category is not listed please add one:
-        <input type="text" name="newcategory">
-      </label>
-    <input type="submit" value="Add Bookmark">
-  </form>
+    <label>If category is not listed please add one:
+      <input type="text" name="newcategory">
+    </label>
+  <input type="submit" value="Add Bookmark">
+</form>
 
 
   <%- include('../partials/footer') %>

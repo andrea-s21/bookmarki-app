@@ -13,7 +13,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var bookmarksRouter = require('./routes/bookmarks');
-var categoriesRouter = require('./routes/categories');
+//var categoriesRouter = require('./routes/categories');
 
 var app = express();
 
@@ -44,7 +44,7 @@ const isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
 app.use('/bookmarks', bookmarksRouter);
-app.use('/categories', categoriesRouter);
+//app.use('/categories', categoriesRouter);
 
 
 // catch 404 and forward to error handler
