@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
 <h2>Add a new bookmark</h2>
-<form action="/bookmarks" method="POST">
+<form id="add-form" action="/bookmarks" method="POST">
   <label>Title:
       <input type="text" name="title">
   </label><br>
   <label>Description:
-      <input type="text" name="description">
+    <textarea name="description"></textarea>
   </label><br>
   <label>URL:
       <!-- link should be clickable -->
@@ -22,7 +22,7 @@
     <label>If category is not listed please add one:
       <input type="text" name="newcategory">
     </label>
-  <input type="submit" value="Add Bookmark">
+  <input id="add-btn" type="submit" value="Add Bookmark">
 </form>
 
 

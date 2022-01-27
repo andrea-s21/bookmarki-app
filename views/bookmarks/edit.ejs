@@ -1,21 +1,21 @@
 <%- include('../partials/header') %>
 
-<h3>Edit Bookmark</h3> 
+<h2>Edit Bookmark</h2> 
 
-<form action="/bookmarks/<%= bookmark._id %>?_method=PUT" method="POST">
+<form id="edit-form" action="/bookmarks/<%= bookmark._id %>?_method=PUT" method="POST">
     <label>Title:
         <input type="text" name="title" value="<%= bookmark.title  %>" >
     </label><br>
     <label>Description:
-        <input type="text" name="description" value="<%= bookmark.description  %>">
+        <textarea name="description" value="<%= bookmark.description  %>"></textarea>
     </label><br>
     <label>URL:
         <!-- link should be clickable -->
-      <input type="link" name="url" value="<%= bookmark.url  %>"><br>
-    <input type="submit" value="Save">
+      <input type="url" name="url" value="<%= bookmark.url  %>"><br><br>
+    <input id="save-btn" type="submit" value="Save">
 </form>
 <form action="/bookmarks/<%= bookmark._id %>?_method=DELETE" method="POST">
-    <input type="submit" name="" value="Delete Bookmark">
+    <input id="delete-btn" type="submit" name="" value="Delete Bookmark">
 </form>
 
   <%- include('../partials/footer') %>

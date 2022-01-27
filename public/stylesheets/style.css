@@ -40,6 +40,21 @@ nav > a.active {
   cursor: default;
 }
 
+nav > img {
+  width: 275px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
 #welcome-page {
   padding-left: 60px;
   font-family: 'Poppins', sans-serif;
@@ -100,7 +115,7 @@ nav > a.active {
 
 #new-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #e3f5fa;
+  border:0.1em solid floralwhite;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -109,17 +124,17 @@ nav > a.active {
   color: #5A5A5A;
   text-align:center;
   transition: all 0.2s;
-  background-color: #e3f5fa;
+  background-color: floralwhite;
 }
 
 #new-btn:hover{
-  color: #e3f5fa;
+  color: floralwhite;
   background-color: #51859a;
 }
 
 #explore-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #e3f5fa;
+  border:0.1em solid floralwhite;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -128,42 +143,117 @@ nav > a.active {
   color: #5A5A5A;
   text-align:center;
   transition: all 0.2s;
-  background-color: #e3f5fa;
+  background-color: floralwhite;
 }
 
 #explore-btn:hover{
-  color: #e3f5fa;
+  color: floralwhite;
   background-color: #51859a;
 }
 
-.dropdown {
-  display: inline-block;
-  position: relative;
+#add-form, #edit-form {
+  display: grid;
+  justify-content: center;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 12rem));
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 100%;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+#add-form input[type="submit"], input[type="text"], input[type="url"] {
+  grid-column: span 2;
+  width: 25rem;
+  margin-left: auto;
+  font-size: 15px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+#add-form > label > textarea {
+  width: 25rem;
 }
 
-.dropdown-content a {
-  display: block;
-  color: #000000;
-  padding: 5px;
-  text-decoration: none;
+#edit-form > label > textarea {
+  width: 25rem;
 }
 
-.dropdown-content a:hover {
-  color: #FFFFFF;
-  background-color: #00A4BD;
-  }
+#add-form > label > select {
+  width: 10rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+#edit-form input[type="url"], input[type="text"]  {
+  width: 25rem;
+  font-size: 15px;
+  color: #5A5A5A;
+}
+
+#add-form > label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5A5A5A;
+}
+
+#edit-form > label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5A5A5A;
+}
+
+#add-btn {
+  padding:0.35em 1.2em;
+  border:0.1em solid #51859a;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  color: floralwhite;
+  text-align:center;
+  transition: all 0.2s;
+  background-color: #51859a;
+}
+
+#add-btn:hover{
+  color: #51859a;
+  background-color: floralwhite;
+}
+
+#save-btn, #delete-btn {
+  width: 25rem;
+  padding:0.35em 1.2em;
+  border:0.1em solid #51859a;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-weight:300;
+  color: floralwhite;
+  text-align:center;
+  transition: all 0.2s;
+  background-color: #51859a;
+}
+
+#save-btn:hover, #delete-btn:hover {
+  color: #51859a;
+  background-color: floralwhite;
+}
+
+#delete-btn {
+  border:0.1em solid #ffca60;
+  color: #5A5A5A;
+  background-color: #ffca60;
+}
+
+#save-btn:hover, #delete-btn:hover {
+  color: #51859a;
+  background-color: floralwhite;
+}
+
+h2 {
+  padding-bottom: 10px;
+  font-size: 30px;
+  color: #51859a;
+  text-shadow: 1px 1px floralwhite;
+  font-weight: 600;
+  text-align: center;
+}
 
 #login-img {
   width: 25px;
@@ -174,6 +264,10 @@ nav > a.active {
   width: 250px;
   box-sizing: content-box;
   width: 700px;
+}
+
+#logo-img {
+  float: left;
 }
 
 
