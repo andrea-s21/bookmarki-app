@@ -8,10 +8,11 @@ body {
   background-color: #eddfc1;
   font-family: 'Poppins', sans-serif;
   display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: 
+  grid-template-rows: 50px 1fr 53px;
+  grid-template-areas:  
     "nav"
     "main"
+    "footer";
 }
 
 body > nav {
@@ -83,7 +84,7 @@ body > main {
 
 #auth-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #e3f5fa;
+  border:0.1em solid floralwhite;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -92,7 +93,7 @@ body > main {
   color: #5A5A5A;
   text-align:center;
   transition: all 0.2s;
-  background-color: #e3f5fa;
+  background-color: floralwhite;
 }
 
 #auth-btn:hover{
