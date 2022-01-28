@@ -17,7 +17,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #ffca60;
+  background-color: #ffce6d;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -34,7 +34,7 @@ nav > a {
 
 nav > a:hover:not(.active) {
   color: floralwhite;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 nav > a.active {
@@ -98,7 +98,7 @@ body > main {
 
 #auth-btn:hover{
   color: #e3f5fa;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 #home-page {
@@ -131,7 +131,7 @@ body > main {
 
 #new-btn:hover{
   color: floralwhite;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 #explore-btn {
@@ -150,7 +150,7 @@ body > main {
 
 #explore-btn:hover{
   color: floralwhite;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 #add-form, #edit-form {
@@ -168,14 +168,14 @@ body > main {
   color: #5A5A5A;
 }
 
-#add-form > label > textarea {
+#add-form > label > input {
   width: 25rem;
   font-family: 'Poppins', sans-serif;
   color: #5A5A5A;
   font-size: 15px;
 }
 
-#edit-form > label > textarea {
+#edit-form > label > input {
   width: 25rem;
   font-family: 'Poppins', sans-serif;
   color: #5A5A5A;
@@ -188,8 +188,16 @@ body > main {
   color: #5A5A5A;
 }
 
-#edit-form input[type="url"], input[type="text"]  {
+#edit-form > label > select {
+  width: 10rem;
+  font-family: 'Poppins', sans-serif;
+  color: #5A5A5A;
+}
+
+#edit-form input[type="submit"], input[type="text"], input[type="url"] {
+  grid-column: span 2;
   width: 25rem;
+  margin-left: auto;
   font-size: 15px;
   color: #5A5A5A;
 }
@@ -208,7 +216,7 @@ body > main {
 
 #add-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #51859a;
+  border:0.1em solid #61a6ab;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -217,7 +225,7 @@ body > main {
   color: floralwhite;
   text-align:center;
   transition: all 0.2s;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 #add-btn:hover{
@@ -228,7 +236,7 @@ body > main {
 #save-btn, #delete-btn {
   width: 25rem;
   padding:0.35em 1.2em;
-  border:0.1em solid #51859a;
+  border:0.1em solid #61a6ab;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -237,38 +245,34 @@ body > main {
   color: floralwhite;
   text-align:center;
   transition: all 0.2s;
-  background-color: #51859a;
+  background-color: #61a6ab;
 }
 
 #save-btn:hover, #delete-btn:hover {
-  color: #51859a;
+  color: #61a6ab;
   background-color: floralwhite;
 }
 
 #delete-btn {
-  border:0.1em solid #ffca60;
+  border-color: #ffce6d;
   color: #5A5A5A;
-  background-color: #ffca60;
-}
-
-#save-btn:hover, #delete-btn:hover {
-  color: #51859a;
-  background-color: floralwhite;
+  background-color: #ffce6d;
 }
 
 h2 {
   font-size: 30px;
-  color: #51859a;
+  color: #61a6ab;
   text-shadow: 1px 1px floralwhite;
   font-weight: 600;
   text-align: center;
 }
 
 #index, h3 {
+  padding-left: 60px;
   display: grid;
   justify-content: center;
   justify-self: center;
-  grid-gap: 15px;
+  grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 25rem));
   font-size: 15px;
 }
@@ -288,7 +292,7 @@ span {
 
 #view-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #51859a;
+  border:0.1em solid #61a6ab;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -297,12 +301,12 @@ span {
   color: floralwhite;
   text-align:center;
   transition: all 0.2s;
-  background-color: #51859a;
+  background-color: #61a6ab;
   width: 15em;
 }
 
 #view-btn:hover{
-  color: #51859a;
+  color: #61a6ab;
   background-color: floralwhite;
 }
 
@@ -321,7 +325,7 @@ grid-template-columns: repeat(2, minmax(auto, 17rem));
 
 #edit-btn {
   padding:0.35em 1.2em;
-  border:0.1em solid #51859a;
+  border:0.1em solid #61a6ab;
   margin:0 0.3em 0.3em 0;
   border-radius:0.12em;
   box-sizing: border-box;
@@ -330,12 +334,12 @@ grid-template-columns: repeat(2, minmax(auto, 17rem));
   color: floralwhite;
   text-align:center;
   transition: all 0.2s;
-  background-color: #51859a;
+  background-color: #61a6ab;
   width: 15em;
 }
 
 #edit-btn:hover{
-  color: #51859a;
+  color: #61a6ab;
   background-color: floralwhite;
 }
 
@@ -353,6 +357,6 @@ grid-template-columns: repeat(2, minmax(auto, 17rem));
 
 footer {
   text-align: center;
-  background-color: #ffca60;
+  background-color: #ffce6d;
   font-size: 15px;
 }

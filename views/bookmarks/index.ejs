@@ -1,44 +1,44 @@
 <%- include('../partials/header') %>
-<main>
-    <h2> My Bookmarks</h2>
-    <% categories.forEach(function(c) { %>
-        <section>
-            <h3>
-                <%= c.title %>
-            </h3>
-            <% var filteredBookmarks=bookmarks.filter(b=> b.category === c.title) %>
-                <% if (filteredBookmarks.length) { %>
-                    <% filteredBookmarks.forEach(function(b) { %>
-                        <% if (user._id.toString()===b.user._id.toString()) { %>
-                            <article id="index">
-                                <label><span>Title:</span>
-                                    <div>
-                                        <%= b.title %>
-                                    </div>
-                                </label>
-                                <label><span>Description:</span>
-                                    <div>
-                                        <%= b.description %>
-                                    </div>
-                                </label>
-                                <label><span>URL:</span>
-                                    <div>
-                                        <%= b.url %>
-                                    </div>
-                                </label>
-                                <label><span>Category</span>
-                                    <div>
-                                        <%= b.category %>
-                                    </div>
-                                </label>
-                                <a id="view-btn" href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
-                            </article>
-                        <% } %>
-                    <% }) %>
-                <% } else { %>
-                <div id="no-bkmrks">No bookmarks for this category.</div>
-            <% } %>
-        </section>
-     <% }) %>
-</main>
-            <%- include('../partials/footer') %>
+    <main>
+        <h2> My Bookmarks</h2>
+        <% categories.forEach(function(c) { %>
+            <section>
+                <h3>
+                    <%= c.title %>
+                </h3>
+                <% var filteredBookmarks=bookmarks.filter(b=> b.category === c.title) %>
+                    <% if (filteredBookmarks.length) { %>
+                        <% filteredBookmarks.forEach(function(b) { %>
+                            <% if (user._id.toString()===b.user._id.toString()) { %>
+                                <article id="index">
+                                    <label><span>Title:</span>
+                                        <div>
+                                            <%= b.title %>
+                                        </div>
+                                    </label>
+                                    <label><span>Description:</span>
+                                        <div>
+                                            <%= b.description %>
+                                        </div>
+                                    </label>
+                                    <label><span>URL:</span>
+                                        <div>
+                                            <%= b.url %>
+                                        </div>
+                                    </label>
+                                    <label><span>Category</span>
+                                        <div>
+                                            <%= b.category %>
+                                        </div>
+                                    </label>
+                                    <a id="view-btn" href="/bookmarks/<%= b._id  %> ">View Bookmark</a>
+                                </article>
+                            <% } %>
+                        <% }) %>
+                            <% } else { %>
+                            <div id="no-bkmrks">No bookmarks for this category.</div>
+                    <% } %>
+            </section>
+            <% }) %>
+    </main>
+    <%- include('../partials/footer') %>

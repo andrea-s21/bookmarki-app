@@ -13,7 +13,7 @@ module.exports = {
 
 function deleteBookmark(req, res) {
   Bookmark.findByIdAndDelete(req.params.id, function (err) {
-      res.redirect('/bookmarks');
+    res.redirect('/bookmarks');
   });
 }
 
@@ -28,15 +28,15 @@ function update(req, res) {
 }
 
 function edit(req, res) {
-  Bookmark.findById(req.params.id, function(err, bookmark) {
-    res.render('bookmarks/edit', {bookmark});
+  Bookmark.findById(req.params.id, function (err, bookmark) {
+    res.render('bookmarks/edit', { bookmark });
     if (err || !bookmark) return res.redirect('/bookmarks');
   });
 }
 
 function show(req, res) {
   Bookmark.findById(req.params.id, function (err, bookmark) {
-    res.render('bookmarks/show', {bookmark});
+    res.render('bookmarks/show', { bookmark });
   });
 }
 
@@ -47,24 +47,23 @@ async function create(req, res) {
     req.body.category = req.body.newcategory
   }
   Bookmark.create(req.body, function (err, bookmark) {
-    console.log('HELLO!')
     res.redirect('/bookmarks');
   });
 }
 
 function newBookmark(req, res) {
-  Category.find({}).sort('title').exec(function(err, categories) {
-    res.render('bookmarks/new', {categories});
+  Category.find({}).sort('title').exec(function (err, categories) {
+    res.render('bookmarks/new', { categories });
   });
 }
 
 function index(req, res) {
-  Category.find({}).sort('title').exec(function(err, categories) {
+  Category.find({}).sort('title').exec(function (err, categories) {
     Bookmark.find({})
-    .populate('user')
-    .sort('category')
-    .exec(function(err, bookmarks){
-      res.render('bookmarks/index', {bookmarks, categories});
-    })
+      .populate('user')
+      .sort('category')
+      .exec(function (err, bookmarks) {
+        res.render('bookmarks/index', { bookmarks, categories });
+      })
   })
 }

@@ -6,7 +6,7 @@ const bookmarkSchema = new Schema({
     title: {
         type: String,
         required: true
-      },
+    },
     description: {
         type: String
     },
@@ -18,7 +18,7 @@ const bookmarkSchema = new Schema({
         type: String,
         required: true
     },
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     userName: String,
     userAvatar: String
 }, {

@@ -1,29 +1,31 @@
 <%- include('../partials/header') %>
-<main>
-<h2>Add a new bookmark</h2>
-<form id="add-form" action="/bookmarks" method="POST">
-  <label>Title:
-      <input type="text" name="title">
-  </label><br>
-  <label>Description:
-    <textarea name="description"></textarea>
-  </label><br>
-  <label>URL:
-      <!-- link should be clickable -->
-    <input type="url" name="url">
-  </label><br>
-  <label>Category:
-      <select name="category">
-        <% categories.forEach(function(c){ %>
-          <option value="<%= c.title %>"><%= c.title %> </option>
-        <% }) %> 
-      </select>
-    </label><br>
-    <label>If category is not listed please add one:
-      <input type="text" name="newcategory">
-    </label>
-  <input id="add-btn" type="submit" value="Add Bookmark">
-</form>
-</main>
+  <main>
+    <h2>Add a new bookmark</h2>
+    <form id="add-form" action="/bookmarks" method="POST">
+      <label>Title:
+        <input type="text" name="title">
+      </label><br>
+      <label>Description:
+        <input name="description"></input>
+      </label><br>
+      <label>URL:
+        <!-- link should be clickable -->
+        <input type="url" name="url">
+      </label><br>
+      <label>Category:
+        <select name="category">
+          <% categories.forEach(function(c){ %>
+            <option value="<%= c.title %>">
+              <%= c.title %>
+            </option>
+          <% }) %>
+        </select>
+      </label><br>
+      <label>If category is not listed please add one:
+        <input type="text" name="newcategory">
+      </label>
+      <input id="add-btn" type="submit" value="Add Bookmark">
+    </form>
+  </main>
 
   <%- include('../partials/footer') %>

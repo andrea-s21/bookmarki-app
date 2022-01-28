@@ -1,25 +1,26 @@
 <%- include('../partials/header') %>
-<main>
-<h2>Bookmark Details</h2>
-<section id="show-page">
-    <h4>Title: </h4>
-  <div>
-    <%= bookmark.title %>
-  </div>
-  <h4>Description: </h4>
-  <div>
-    <%= bookmark.description %>
-  </div>
-  <h4>URL: </h4>
-  <div>
-    <%= bookmark.url %>
-  </div>
-  <h4>Category: </h4>
-  <div>
-    <%= bookmark.category %>
-  </div>
-  <a id="edit-btn" href="/bookmarks/<%= bookmark._id %>/edit">Edit Bookmark</a>
-</section>
-</main>  
+  <main>
+    <h2>Bookmark Details</h2>
+    <section id="show-page">
+      <h4>Title: </h4>
+      <div>
+        <%= bookmark.title %>
+      </div>
+      <h4>Description: </h4>
+      <div>
+        <%= bookmark.description %>
+      </div>
+      <h4>URL: </h4>
+      <div>
+        <%= bookmark.url %>
+      </div>
+      <h4>Category: </h4>
+      <div>
+        <%= bookmark.category %>
+      </div>
+      <a id="edit-btn" href="/bookmarks/<%= bookmark._id %>/edit">Edit Bookmark</a>
+      <a id="edit-btn" href="/bookmarks">Back to Bookmarks</a>
+    </section>
+  </main>
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
