@@ -16,10 +16,10 @@
 ![This is an image](https://i.imgur.com/tUxysMu.png)
 <p></p>
 
-[Add Bookmark Page](https://i.imgur.com/x4iPxXV.png)
+[Add Bookmark Page](https://i.imgur.com/bUBiRYB.png)
 <p></p>
 
-![This is an image](https://i.imgur.com/x4iPxXV.png)
+![This is an image](https://i.imgur.com/bUBiRYB.png)
 <p></p>
 
 [All Bookmarks Page](https://i.imgur.com/Og6nFTY.png)
@@ -34,10 +34,10 @@
 ![This is an image](https://i.imgur.com/iJg0XEi.png)
 <p></p>
 
-[Edit Bookmark Page](https://i.imgur.com/CE0uBdF.png)
+[Edit Bookmark Page](https://i.imgur.com/nLbAoTl.png)
 <p></p>
 
-![This is an image](https://i.imgur.com/CE0uBdF.png)
+![This is an image](https://i.imgur.com/nLbAoTl.png)
 <p></p>
 
 ## Technologies Used: 

@@ -1,18 +1,18 @@
 <%- include('./partials/header') %>
   <!DOCTYPE html>
   <html>
-
   <head>
     <title>
       <%= title %>
     </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-
+<main>
   <body>
     <% if (user) { %>
       <section id="home-page">
-        <h3 id="home-header">Welcome! What would you like to do today?</h3>
+        <h1 id="welcome-user">Welcome<br> <%= user.name %>!</h1>
+        <h5 id="home-header">What would you like to do today?</h5>
         <a id="new-btn" href="/bookmarks/new">Add a new bookmark</a>&nbsp;
         <a id="explore-btn" href="/bookmarks">Explore your bookmarks</a>&nbsp;
       </section>
@@ -20,13 +20,13 @@
         <section id="welcome-page">
           <img src="public/images/home.png" alt="">
           <h1 id="welcome-header">A fun way to organize your bookmarks.<h1>
-            <p id="welcome-msg">Keep all your bookmarks organized by creating your own unique categories.
+            <p id="welcome-msg">Keep all your bookmarks organized<br> by creating your own unique categories.
             <p>
             <a id="auth-btn" href="/auth/google">Start organizing</a>
       <% } %>
         </section>
   </body>
-
+</main>
   </html>
 
   <%- include('./partials/footer') %>
