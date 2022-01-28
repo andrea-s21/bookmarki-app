@@ -4,16 +4,16 @@
 <p></p>
 
 ## Screenshots:
-[Welcome Page](https://i.imgur.com/xSFMGHD.png)
+[Welcome Page](https://i.imgur.com/3unLzSo.png)
 <p></p>
 
-![This is an image](https://i.imgur.com/xSFMGHD.png)
+![This is an image](https://i.imgur.com/3unLzSo.png)
 <p></p>
 
-[Home Page](https://i.imgur.com/tUxysMu.png)
+[Home Page](https://i.imgur.com/lfkkaDs.png)
 <p></p>
 
-![This is an image](https://i.imgur.com/tUxysMu.png)
+![This is an image](https://i.imgur.com/lfkkaDs.png)
 <p></p>
 
 [Add Bookmark Page](https://i.imgur.com/bUBiRYB.png)
